@@ -44,10 +44,10 @@ const Invest = () => {
       <Container maxW="container.md">
         <VStack spacing={8} p={8} borderRadius="md">
           <Text fontSize="2xl" fontWeight="bold">
-            Thank You for Investing in the Future
+            Thank You for Investing in the Future of <span style={{ color: "purple" }}>Energy</span>
           </Text>
           <Text fontSize="lg">
-            We appreciate your commitment to revolutionizing the energy sector. Join us for a meeting where we will showcase the investment to worthy investors.
+            We appreciate your commitment to revolutionizing the energy sector. Join us for a meeting where we will showcase a <span style={{ color: "purple" }}>200-volt, 1.5m³ prototype</span>.
           </Text>
           <form onSubmit={handleSubmit}>
             <FormControl id="name" isRequired>
