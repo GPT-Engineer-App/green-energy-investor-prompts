@@ -12,7 +12,7 @@ const Invest = () => {
             We appreciate your commitment to revolutionizing the energy sector. Join us for a meeting where we will showcase a <span style={{ color: "purple" }}>200-volt, 1.5m³ prototype</span>.
           </Text>
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfD4J8k8J8k8J8k8J8k8J8J8J8k8J8k8J8k8J8k8J8k8/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfD4J8k8J8k8J8k8J8J8J8J8k8J8J8J8J8J8J8J8J8J8/viewform?embedded=true"
             width="100%"
             height="800"
             frameborder="0"
