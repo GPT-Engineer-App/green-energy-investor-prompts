@@ -17,27 +17,34 @@ const Invest = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch("https://formsubmit.co/ajax/eduofficiale@gmail.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
-    const result = await response.json();
-    if (result.success === "true") {
-      alert("Thank you for your submission!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: ""
-      });
-    } else {
-      alert("There was an error with your submission. Please try again.");
-    }
-  };
+      e.preventDefault();
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/eduofficiale@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          alert("Thank you for your submission!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: ""
+          });
+        } else {
+          console.error("Submission error:", result);
+          alert("There was an error with your submission. Please try again.");
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+        alert("There was an error with your submission. Please try again.");
+      }
+    };
 
   return (
     <Box bg="black" color="white" minH="100vh" display="flex" alignItems="center" justifyContent="center">
