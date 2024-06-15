@@ -1,70 +1,6 @@
-import { Box, Container, Text, VStack, Input, Button, FormControl, FormLabel, useToast } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Container, Text, VStack } from "@chakra-ui/react";
 
 const Invest = () => {
-  const toast = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: ""
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch("https://formsubmit.co/ajax/eduofficiale@gmail.com", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-        if (result.success) {
-          toast({
-            title: "Submission Successful",
-            description: "Thank you for your submission!",
-            status: "success",
-            duration: 5000,
-            isClosable: true,
-          });
-          setFormData({
-            name: "",
-            email: "",
-            phone: ""
-          });
-        } else {
-          console.error("Submission error:", result);
-          toast({
-            title: "Submission Error",
-            description: "There was an error with your submission. Please try again.",
-            status: "error",
-            duration: 5000,
-            isClosable: true,
-          });
-        }
-      } catch (error) {
-        console.error("Fetch error:", error);
-        toast({
-          title: "Network Error",
-          description: "There was an error with your submission. Please try again.",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-    };
-
   return (
     <Box bg="black" color="white" minH="100vh" display="flex" alignItems="center" justifyContent="center">
       <Container maxW="container.md">
@@ -75,23 +11,16 @@ const Invest = () => {
           <Text fontSize="lg">
             We appreciate your commitment to revolutionizing the energy sector. Join us for a meeting where we will showcase a <span style={{ color: "purple" }}>200-volt, 1.5m³ prototype</span>.
           </Text>
-          <form onSubmit={handleSubmit}>
-            <FormControl id="name" isRequired>
-              <FormLabel>Name</FormLabel>
-              <Input type="text" name="name" value={formData.name} onChange={handleChange} />
-            </FormControl>
-            <FormControl id="email" isRequired>
-              <FormLabel>Email</FormLabel>
-              <Input type="email" name="email" value={formData.email} onChange={handleChange} />
-            </FormControl>
-            <FormControl id="phone" isRequired>
-              <FormLabel>Phone</FormLabel>
-              <Input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
-            </FormControl>
-            <Button mt={4} colorScheme="teal" type="submit">
-              Submit
-            </Button>
-          </form>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfD4J8k8J8k8J8k8J8k8J8J8J8k8J8k8J8k8J8k8J8k8/viewform?embedded=true"
+            width="100%"
+            height="800"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          >
+            Loading…
+          </iframe>
         </VStack>
       </Container>
     </Box>
