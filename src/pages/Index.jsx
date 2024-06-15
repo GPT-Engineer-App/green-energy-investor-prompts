@@ -25,10 +25,10 @@ const Index = () => {
       <Container centerContent maxW="container.md">
         <VStack spacing={4} bg="rgba(255, 255, 255, 0.8)" p={8} borderRadius="md">
           <Text fontSize="4xl" fontWeight="bold">
-            Invest in the Future of Renewable Energy
+            Invest in the Future of Unlimited Kinetic Energy Source
           </Text>
           <Text fontSize="xl" textAlign="center">
-            Join us in revolutionizing the way we power our vehicles with unlimited renewable kinetic energy.
+            Join us in revolutionizing the way we power our vehicles with unlimited kinetic energy source.
           </Text>
           <Button colorScheme="teal" size="lg">
             Learn More
