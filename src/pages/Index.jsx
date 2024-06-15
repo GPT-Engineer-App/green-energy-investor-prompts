@@ -1,19 +1,44 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Text, VStack, Button, Box } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [bgImage, setBgImage] = useState("");
+
+  useEffect(() => {
+    import("../../public/images/car-charging-station.jpg").then((image) => {
+      setBgImage(image.default);
+    });
+  }, []);
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box
+      backgroundImage={`url(${bgImage})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      height="100vh"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      color="black"
+    >
+      <Container centerContent maxW="container.md">
+        <VStack spacing={4} bg="rgba(255, 255, 255, 0.8)" p={8} borderRadius="md">
+          <Text fontSize="4xl" fontWeight="bold">
+            Invest in the Future of Renewable Energy
+          </Text>
+          <Text fontSize="xl" textAlign="center">
+            Join us in revolutionizing the way we power our vehicles with unlimited renewable kinetic energy.
+          </Text>
+          <Button colorScheme="teal" size="lg">
+            Learn More
+          </Button>
+          <Button colorScheme="green" size="lg">
+            Invest
+          </Button>
+        </VStack>
+      </Container>
+    </Box>
   );
 };
 
