@@ -1,7 +1,9 @@
 import { Container, Text, VStack, Button, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [bgImage, setBgImage] = useState("");
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Index = () => {
           <Text fontSize="xl" textAlign="center">
             Join us in revolutionizing the way we power our vehicles with unlimited kinetic energy source.
           </Text>
-          <Button colorScheme="teal" size="lg">
+          <Button colorScheme="teal" size="lg" onClick={() => navigate("/learn-more")}>
             Learn More
           </Button>
           <Button colorScheme="green" size="lg">
