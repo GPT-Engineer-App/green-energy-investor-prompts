@@ -27,10 +27,10 @@ const Index = () => {
       <Container centerContent maxW="container.md">
         <VStack spacing={4} bg="rgba(255, 255, 255, 0.8)" p={8} borderRadius="md">
           <Text fontSize="4xl" fontWeight="bold">
-            Invest in the Future of Unlimited Kinetic Energy Source
+            Invest in the Future of <span style={{ color: "purple" }}>Unlimited Kinetic Energy Source</span>
           </Text>
           <Text fontSize="xl" textAlign="center">
-            Join us in revolutionizing the way we power our vehicles with unlimited kinetic energy source.
+            Join us in revolutionizing the way we power our vehicles with <span style={{ color: "purple" }}>unlimited kinetic energy source</span>.
           </Text>
           <Button colorScheme="teal" size="lg" onClick={() => navigate("/learn-more")}>
             Learn More

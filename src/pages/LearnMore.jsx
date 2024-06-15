@@ -6,10 +6,10 @@ const LearnMore = () => {
       <Container maxW="container.md">
         <VStack spacing={8} p={8} borderRadius="md">
           <Text fontSize="2xl" fontWeight="bold">
-            The Shift to Green Energy
+            The Shift to <span style={{ color: "purple" }}>Green Energy</span>
           </Text>
           <Text fontSize="lg">
-            With global warming and ozone depletion, the world is evolving from fossil fuels and carbon-emitting fuels to green energy. This creates a high demand for electricity.
+            With global warming and ozone depletion, the world is evolving from fossil fuels and carbon-emitting fuels to <span style={{ color: "purple" }}>green energy</span>. This creates a high demand for electricity.
           </Text>
           <Text fontSize="2xl" fontWeight="bold">
             Our Revolutionary Power Source
