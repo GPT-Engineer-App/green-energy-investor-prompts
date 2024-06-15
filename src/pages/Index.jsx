@@ -35,7 +35,7 @@ const Index = () => {
           <Button colorScheme="teal" size="lg" onClick={() => navigate("/learn-more")}>
             Learn More
           </Button>
-          <Button colorScheme="green" size="lg">
+          <Button colorScheme="green" size="lg" onClick={() => navigate("/invest")}>
             Invest
           </Button>
         </VStack>
