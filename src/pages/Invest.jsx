@@ -12,12 +12,13 @@ const Invest = () => {
             We appreciate your commitment to revolutionizing the energy sector. Join us for a meeting where we will showcase a <span style={{ color: "purple" }}>200-volt, 1.5m³ prototype</span>.
           </Text>
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfD4J8k8J8k8J8k8J8J8J8J8k8J8J8J8J8J8J8J8J8J8/viewform?embedded=true"
+            title="Investment Form"
+            src="https://form.jotform.com/your-jotform-id"
             width="100%"
             height="800"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
           >
             Loading…
           </iframe>
