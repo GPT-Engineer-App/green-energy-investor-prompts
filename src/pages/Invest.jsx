@@ -1,7 +1,8 @@
-import { Box, Container, Text, VStack, Input, Button, FormControl, FormLabel } from "@chakra-ui/react";
+import { Box, Container, Text, VStack, Input, Button, FormControl, FormLabel, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Invest = () => {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +31,13 @@ const Invest = () => {
 
         const result = await response.json();
         if (result.success) {
-          alert("Thank you for your submission!");
+          toast({
+            title: "Submission Successful",
+            description: "Thank you for your submission!",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
           setFormData({
             name: "",
             email: "",
@@ -38,11 +45,23 @@ const Invest = () => {
           });
         } else {
           console.error("Submission error:", result);
-          alert("There was an error with your submission. Please try again.");
+          toast({
+            title: "Submission Error",
+            description: "There was an error with your submission. Please try again.",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          });
         }
       } catch (error) {
         console.error("Fetch error:", error);
-        alert("There was an error with your submission. Please try again.");
+        toast({
+          title: "Network Error",
+          description: "There was an error with your submission. Please try again.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
       }
     };
 
